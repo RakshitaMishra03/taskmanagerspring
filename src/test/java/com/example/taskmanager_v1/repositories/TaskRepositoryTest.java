@@ -36,7 +36,24 @@ public class TaskRepositoryTest {
         task1.setCompleted(true);
         taskRepository.save(task);
         taskRepository.save(task1);
-        assertNotNull(taskRepository.findAll());
+
+
+    }
+
+    @Test
+    public void findByCompletedWorks(){
+        Task task = new Task();
+        task.setTitle("Task 2");
+        task.setDescription("Description 2");
+        task.setCompleted(true);
+        Task task1 = new Task();
+        task1.setTitle("Task 3");
+        task1.setDescription("Description 3");
+        task1.setCompleted(false);
+        taskRepository.save(task);
+        taskRepository.save(task1);
+        assertEquals(1,(taskRepository.findAllByCompleted(true)).size());
+        assertEquals(1,(taskRepository.findAllByCompleted(false)).size());
 
 
     }

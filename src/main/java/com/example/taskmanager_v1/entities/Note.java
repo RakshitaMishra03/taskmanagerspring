@@ -10,19 +10,4 @@ public class Note extends Base {
     @ManyToOne()
     Task task;
 
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    public Task getTask() {
-        return task;
-    }
-
-    public void setTask(Task task) {
-        this.task = task;
-    }
 }

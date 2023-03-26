@@ -15,6 +15,6 @@ public abstract class Base {
     private Integer id;
 
     @CreatedDate
-    @Column(name = "created_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT TIMESTAMP")
+    @Column(name = "created_at")
     private Date createdAt;
 }
